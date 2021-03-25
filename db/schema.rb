@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 2021_03_24_200447) do
 
   create_table "event_attendances", force: :cascade do |t|
-    t.integer "event_attendee_id", null: false
-    t.integer "attended_event_id", null: false
+    t.integer "attendee_id"
+    t.integer "attended_event_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["attended_event_id"], name: "index_event_attendances_on_attended_event_id"
-    t.index ["event_attendee_id"], name: "index_event_attendances_on_event_attendee_id"
+    t.index ["attendee_id"], name: "index_event_attendances_on_attendee_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -42,6 +42,4 @@ ActiveRecord::Schema.define(version: 2021_03_24_200447) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "event_attendances", "attended_events"
-  add_foreign_key "event_attendances", "event_attendees"
 end
