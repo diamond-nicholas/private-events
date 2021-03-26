@@ -36,3 +36,5 @@
 <%= link_to 'New Event', new_event_path %>
 <br>
 <%= link_to 'sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<%= link_to 'User show page', users_show_path(:id => current_user.id) %>
