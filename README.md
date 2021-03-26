@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-In this project, we have created an applicattion that allows you to create events as a registered user, attend those events, read the information of those events icluding the full attendee list, and see all the events you're attending on your user page. Events are divided into upcoming (future events) and past by referencing just the date.
+In this project, we have created an application that allows you to create events as a registered user, attend those events, read the information of those events including the full attendee list, and see all the events you're attending on your user page. Events are divided into upcoming (future events) and past by referencing just the date.
 
 ## Getting started
 
