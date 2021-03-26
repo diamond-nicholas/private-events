@@ -2,6 +2,7 @@
 
 <h1>Events</h1>
 
+
 <table>
   <thead>
     <tr>
@@ -11,10 +12,17 @@
 
   <tbody>
     <% @events.each do |event| %>
+
       
       <tr>
+      <td><% event.attendees.each do |attendee| %>
+          <%= attendee.id%>
+            <%end%></td>
+            
         <td>  <%= event.title %> <td>
+        <% unless event.attendees.include?(current_user)%> 
         <td> <%= render 'event_attendances/form', event: event, event_attendance: @event_attendances %>
+        <%end%>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
