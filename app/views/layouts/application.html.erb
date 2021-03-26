@@ -16,17 +16,10 @@
         <li><%= link_to 'Home', root_path %></li>
         
         <li><%= link_to 'Create New Event', new_event_path %></li>
-        <% if user_signed_in?%>
-          <li><%= link_to 'User', users_show_path(:id => current_user.id) %></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <%= link_to 'Sign In',  new_user_session_path %>
-        <%= link_to 'Sign Up',  new_user_registration_path %>
-        <%end%>
+        <%= show_nav_links %>
       </ul>
     </nav>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <%= app_flashes %>
     <%= yield %>
   </body>
 </html>
