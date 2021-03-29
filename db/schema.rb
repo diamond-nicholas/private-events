@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_03_26_201215) do
     t.string "body"
     t.datetime "date"
     t.integer "creator_id"
+    t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|

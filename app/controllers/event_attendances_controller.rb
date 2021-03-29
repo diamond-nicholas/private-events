@@ -6,7 +6,7 @@ class EventAttendancesController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event_attendance = EventAttendance.new(event_attendance_params)
+    @event_attendance = current_user.event_attendances.build(event_attendance_params)
 
     respond_to do |format|
       if @event_attendance.save
