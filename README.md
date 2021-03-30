@@ -16,6 +16,13 @@ In this project, we have created an application that allows you to create events
 - To set up and configure your database for the first time, you can use the rails `rails db:create` command.
 - To set up the tables in the database, run the `rails db:migrate` command
 
+## To run tests:
+
+- complete the Getting started procedure to set up correctly.
+- Make sure You are in the root of the project.
+- run `bundle exec rake spec`.
+- The name of the tests and their results will be displayed onto the console will be displayed.
+
 ## Project implementation steps
 
 - We created a new Rails application called **Private-Events**.
