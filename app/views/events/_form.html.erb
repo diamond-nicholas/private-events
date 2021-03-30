@@ -1,5 +1,5 @@
 <%= form_with(model: event) do |form| %>
-  <%= show_validation_errors(event)%>
+  <%= show_validation_errors(event) %>
   <div class="main-form">
     <%= form.label :title, 'Event title'%>
     <%= form.text_field :title %>
@@ -9,6 +9,6 @@
     <%= form.date_field :date %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'create event' %>
   </div>
 <% end %>
