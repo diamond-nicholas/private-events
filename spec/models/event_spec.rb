@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe Event, type: :model do
   context 'validation test' do
     it 'ensures the presence of title' do
-      event = Event.new(body: 'the dress code for the event', date: 20-5-2021, creator_id: 1).save
+      event = Event.new(body: 'the dress code for the event', date: 20 - 5 - 2021, creator_id: 1).save
       expect(event).to eq false
     end
     it 'ensures the presence of body' do
-      event = Event.new(title: 'beach', date: 20-5-2021, creator_id: 1).save
+      event = Event.new(title: 'beach', date: 20 - 5 - 2021, creator_id: 1).save
       expect(event).to eq false
     end
     it 'ensures the presence of date' do
@@ -15,11 +15,13 @@ RSpec.describe Event, type: :model do
       expect(event).to eq false
     end
     it 'ensures the length of the body has 5 minimum' do
-      event = Event.new(body: 'hey', title: 'beach',date: 20-5-2021, creator_id: 1).save
+      event = Event.new(body: 'hey', title: 'beach', date: 20 - 5 - 2021, creator_id: 1).save
       expect(event).to eq false
     end
     it 'ensures the length of the title has 15 maximum' do
-      event = Event.new(body: 'party on the beach', title: 'this will ba a perty on the grreates beach ever on humanity!', date: 20-5-2021, creator_id: 1).save
+      event = Event.new(body: 'party on the beach',
+                        title: 'this will ba a perty on the grreates beach ever on humanity!',
+                        date: 20 - 5 - 2021, creator_id: 1).save
       expect(event).to eq false
     end
   end
@@ -61,7 +63,7 @@ RSpec.describe 'Create new event', type: :feature do
     within('form') do
       fill_in 'event_title', with: 'Party'
       fill_in 'event_body', with: 'Party on the miami beach'
-      fill_in 'event_date', with: "2020-05-02"
+      fill_in 'event_date', with: '2020-05-02'
     end
     click_button 'create event'
     expect(current_path).to eq('/events/1')
